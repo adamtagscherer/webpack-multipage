@@ -1,3 +1,4 @@
+import '../../common/style.scss'
 import './pageA.scss'
 import { buttonFunction } from '../../blocks/button/button.js'
 
