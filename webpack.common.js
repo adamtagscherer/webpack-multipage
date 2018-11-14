@@ -39,16 +39,18 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            outputPath: 'images/'
+            outputPath: 'images/',
+            publicPath: 'dist/images/'
           }
         }]
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
         use: [{
           loader: 'file-loader',
           options: {
-            outputPath: 'fonts/'
+            outputPath: 'fonts/',
+            publicPath: 'dist/fonts/'
           }
         }]
       }
