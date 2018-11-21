@@ -1,9 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
-
 const pagesPath = `./dev/pages/`;
-
 let entry = {};
 
 fs.readdirSync(pagesPath)
