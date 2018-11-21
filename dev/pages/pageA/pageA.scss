@@ -1,7 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
+@import '../../common/01_variable.scss';
+@import '../../common/02_mixin.scss';
 
 body {
-  background-color: red;
+  background-color: $color-primary;
+  @include fluid-type(10px, 123px);
 }
 
 .test-div {

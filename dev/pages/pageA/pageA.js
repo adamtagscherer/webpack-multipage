@@ -1,5 +1,5 @@
-import '../../common/style.scss'
-import './pageA.scss'
+import '../../common/03_typography.scss';
+import './pageA.scss';
 import { buttonFunction } from '../../blocks/button/button.js'
 
 const myArray = [1, 2, 3];

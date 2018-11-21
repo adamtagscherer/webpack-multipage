@@ -13,16 +13,16 @@
 
   // lg
   @media (min-width: 992px) and (max-width: 1199px) {
-    font-size: 'calc(%s + %s * ((100vw - %s) / %s))'% ($min-font-size $su 992px (1199 - 992));
+    font-size: calc(#{$min-font-size} + #{$su} * ((100vw - 992px) / (1199 - 992)));
   }
 
   // md
   @media (min-width: 769px) and (max-width: 991px) {
-    font-size: 'calc(%s + %s * ((100vw - %s) / %s))'% ($min-font-size $su 769px (991 - 769));
+    font-size: calc(#{$min-font-size} + #{$su} * ((100vw - 769px) / (991 - 769)));
   }
 
   // sm
   @media (min-width: 576px) and (max-width: 768px) {
-    font-size: 'calc(%s + %s * ((100vw - %s) / %s))'% ($min-font-size $su 576px (768 - 567));
+    font-size: calc(#{$min-font-size} + #{$su} * ((100vw - 576px) / (768 - 567)));
   }
 }
