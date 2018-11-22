@@ -1,28 +1,33 @@
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
-const pagesPath = `./dev/pages/`;
-let entry = {};
+
+const pagesPath = './dev/pages/';
+const entry = {};
 
 fs.readdirSync(pagesPath)
-  .filter(file =>
-    fs.statSync(path.join(pagesPath, file)).isDirectory()
-  )
-  .forEach(folder => entry[folder] = `${pagesPath}${folder}${path.sep}${folder}.js`);
+  .filter(file => fs.statSync(path.join(pagesPath, file)).isDirectory())
+  .forEach((folder) => { entry[folder] = `${pagesPath}${folder}${path.sep}${folder}.js`; });
 
 module.exports = {
   entry,
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -30,9 +35,9 @@ module.exports = {
           loader: 'file-loader',
           options: {
             outputPath: 'images/',
-            publicPath: 'dist/images/'
-          }
-        }]
+            publicPath: 'dist/images/',
+          },
+        }],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
@@ -40,19 +45,19 @@ module.exports = {
           loader: 'file-loader',
           options: {
             outputPath: 'fonts/',
-            publicPath: 'dist/fonts/'
-          }
-        }]
-      }
-    ]
+            publicPath: 'dist/fonts/',
+          },
+        }],
+      },
+    ],
   },
   plugins: [
     new webpack.ProvidePlugin({
-      $: 'jquery'
-    })
+      $: 'jquery',
+    }),
   ],
   output: {
     filename: 'pages/[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  }
+    path: path.resolve(__dirname, 'dist'),
+  },
 };
