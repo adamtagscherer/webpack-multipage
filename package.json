@@ -1,5 +1,5 @@
 {
-  "name": "webpack-multipage",
+  "name": "@adamtagscherer/webpack-multipage",
   "version": "1.0.0",
   "description": "a frontend workflow for multipage applications bundled with webpack",
   "scripts": {
