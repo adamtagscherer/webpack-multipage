@@ -11,12 +11,12 @@ module.exports = merge(common, {
         use: [
           { loader: 'style-loader' },
           { loader: 'css-loader' },
-          { loader: 'sass-loader' }
-        ]
-      }
-    ]
+          { loader: 'sass-loader' },
+        ],
+      },
+    ],
   },
   devServer: {
-    publicPath: '/dist/'
-  }
+    publicPath: '/dist/',
+  },
 });
